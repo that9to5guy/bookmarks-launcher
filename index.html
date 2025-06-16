@@ -3,85 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuickLinks</title>
+  <title>Extracted Icons with Links</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 80px 20px 20px; /* top padding to make room for header */
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 60px;
-      background: #222;
-      color: #f5f5f5;
-      font-weight: 600;
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      user-select: none;
-      z-index: 10;
-    }
-    .app {
-      width: 80px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px;
+      background: #f0f0f0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
       text-align: center;
+    }
+    .icon-container {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      /* Removed background & box-shadow so no clickable background */
+      vertical-align: top;
+    }
+    .icon-link {
+      display: block;
+      background-image: url('imgs/social_media_icons2.png');
+      background-repeat: no-repeat;
       cursor: pointer;
-      transition: transform 0.1s;
-    }
-    .app:hover {
-      transform: scale(1.05);
-    }
-    .icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 8px;
-      object-fit: contain;
+      /* Set no extra padding/margin */
+      margin: 0 auto 5px auto;
+      /* Make only the exact icon clickable */
     }
     .name {
-      font-size: 13px;
+      font-size: 14px;
       color: #333;
-      word-break: break-word;
+      user-select: none;
+      pointer-events: none; /* so name text is not clickable */
+    }
+    /* Icons from spritecow */
+    .facebook {
+      width: 88px;
+      height: 89px;
+      background-position: -55px -197px;
+    }
+    .whatsapp {
+      width: 88px;
+      height: 89px;
+      background-position: -55px -320px;
+    }
+    .youtube {
+      width: 89px;
+      height: 89px;
+      background-position: -201px -197px;
+    }
+    .instagram {
+      width: 89px;
+      height: 89px;
+      background-position: -201px -320px;
+    }
+    .linkedin {
+      width: 89px;
+      height: 88px;
+      background-position: -201px -688px;
+    }
+    .snapchat {
+      width: 89px;
+      height: 89px;
+      background-position: -201px -933px;
     }
   </style>
 </head>
 <body>
-  <header>QuickLinks</header>
+  <h1>Quick Links</h1>
 
-<script>
-  const links = [
-    { icon: 'google.png', name: 'Google', url: 'https://www.google.com' },
-    { icon: 'youtube.png', name: 'YouTube', url: 'https://www.youtube.com' },
-    { icon: 'medium.png', name: 'Medium', url: 'https://medium.com' },
-    { icon: 'amazon.png', name: 'Amazon', url: 'https://www.amazon.com' },
-    { icon: 'whatsapp.png', name: 'WhatsApp', url: 'https://web.whatsapp.com' },
-    { icon: 'nytimes.png', name: 'NYTimes', url: 'https://www.nytimes.com' },
-  ];
+  <div class="icon-container">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="icon-link facebook"></a>
+    <div class="name">Facebook</div>
+  </div>
 
-  for (const link of links) {
-    const div = document.createElement('div');
-    div.className = 'app';
-    div.innerHTML = `<img src="${link.icon}" class="icon" alt="${link.name}"><div class="name">${link.name}</div>`;
-    div.onclick = () => window.open(link.url, '_blank');
-    document.body.appendChild(div);
-  }
-</script>
+  <div class="icon-container">
+    <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer" class="icon-link whatsapp"></a>
+    <div class="name">WhatsApp</div>
+  </div>
+
+  <div class="icon-container">
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="icon-link youtube"></a>
+    <div class="name">YouTube</div>
+  </div>
+
+  <div class="icon-container">
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="icon-link instagram"></a>
+    <div class="name">Instagram</div>
+  </div>
+
+  <div class="icon-container">
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="icon-link linkedin"></a>
+    <div class="name">LinkedIn</div>
+  </div>
+
+  <div class="icon-container">
+    <a href="https://snapchat.com" target="_blank" rel="noopener noreferrer" class="icon-link snapchat"></a>
+    <div class="name">Snapchat</div>
+  </div>
 </body>
 </html>
