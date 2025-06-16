@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Launcher</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickLinks</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f5f5f5;
       margin: 0;
-      padding: 20px;
+      padding: 80px 20px 20px; /* top padding to make room for header */
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+    }
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 60px;
+      background: #222;
+      color: #f5f5f5;
+      font-weight: 600;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      user-select: none;
+      z-index: 10;
     }
     .app {
       width: 80px;
@@ -46,6 +63,7 @@
   </style>
 </head>
 <body>
+  <header>QuickLinks</header>
 
 <script>
   const links = [
@@ -65,6 +83,5 @@
     document.body.appendChild(div);
   }
 </script>
-
 </body>
 </html>
